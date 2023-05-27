@@ -2,30 +2,6 @@
 ---
 ---
 
-1. Introduction to Angular
-2. Setting up the Development Environment
-3. TypeScript Fundamentals
-4. Angular Components
-5. Angular Templates and Data Binding
-6. Directives in Angular
-7. Angular Services and Dependency Injection
-8. Angular Routing and Navigation
-9. Angular Forms and Validation
-10. Angular HTTP Client and RESTful APIs
-11. State Management with Angular
-12. Angular Pipes
-13. Unit Testing in Angular
-14. Angular Performance Optimization
-15. Angular Deployment Strategies
-16. Angular Security and Authentication
-17. Angular Internationalization (i18n)
-18. Angular Material for UI Components
-19. Angular CLI (Command Line Interface) and Project Structure
-20. Angular Best Practices and Design Patterns
----
----
-
-
 1. Introduction to Angular: Learn about the basics of Angular, its history, features, and advantages. [Angular Introduction](https://angular.io/guide/architecture)
 
 2. Setting up the Development Environment: Understand how to set up your development environment for Angular, including installing Node.js, npm, and Angular CLI. [Angular Setup Guide](https://angular.io/guide/setup-local)
