@@ -30,6 +30,18 @@ import { Component } from '@angular/core';
             <p>Selected Value :{{selectValue}} </p>
 
             <p>-------------------------------  Change event end-------------------------------</p>
+            <p>-----------------------------------------------------------------------------------</p>
+
+            <p>------------------------------- Submit event start -------------------------------</p>
+              <form (ngSubmit)="submitForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" [(ngModel)]="name" required>
+                <button type="submit">Submit</button>
+              </form>
+              <p>Form submitted: {{ isFormSubmitted ? 'Yes' : 'No' }}</p>
+              <p>------------------------------- Submit event end -------------------------------</p>
+
+            
            
            
       
@@ -60,5 +72,15 @@ export class AppComponent {
   handleSelection(event: any) {
     let selectedValue = event?.target.value;
     this.selectValue = selectedValue
+  }
+
+  // handle submit
+
+  name: string = '';
+  isFormSubmitted: boolean = false;
+
+  submitForm() {
+    // Perform form submission logic here
+    this.isFormSubmitted = true;
   }
 }
