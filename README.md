@@ -1,47 +1,178 @@
-## A list of content/topics typically covered in learning Angular:
+## Data binding
+  - Data binding is a powerful mechanism in Angular that establishes a connection between a component and its HTML template. It enables dynamic and interactive behavior in the application.
+
+We can categorize the data binding into two main types:
+-  one-way data binding 
+-  two-way data binding.
+
+**Important Syntax in case of binding**:
+ - The binding punctuation of [], (), [()], and the prefix specify the direction of data flow.
+    - Use `[]` to bind from source to view
+    - Use `()` to bind from view to source
+    - Use `[()]` to bind in a two-way sequence of view to source to view
+
+### **`one-way data binding 👍👍👍`**: 
+
+   - In one-way data binding, the data flows in a single direction, from the component to the template (UI) or from the template to the component. It means that changes in the component property will reflect in the template, but changes in the template will not affect the component property.
+
+   - There are different ways to do one way data binding. In the below most common uses one way data binding briefly 
+   explain.
+      
+      - `Interpolation Binding` : It is a way to insert dynamic values into the view template using double curly braces `{{ }}`
+
+      - `Property Binding` : Property binding is used to set the value of a property or attribute of an HTML element based on a component property. It uses square brackets ([ ]) to bind a property
+
+      - `Attribute Binding` : Attribute binding is used to set the value of an HTML attribute based on a component property. It also uses square brackets ([ ]) to bind an attribute 
+ 
+      - `Class Binding` : Class binding allows you to conditionally apply CSS classes to HTML elements based on component properties. It uses square brackets ([ ]) with the class binding syntax
+
+      - `Style Binding` : Style binding enables you to dynamically set CSS styles for HTML elements based on component properties. It also uses square brackets ([ ]) with the style binding syntax.
+
+
+   Example:
+
+   **`From component to view 👍👍👍`**:
+
+1. Interpolation Binding:
+
+Component:
+```
+export class AppComponent {
+  greeting: string = 'Hello, world!';
+}
+```
+
+View:
+```
+<h1>{{ greeting }}</h1>
+```
+Output:
+```
+Hello, world!
+```
+
+2. Property Binding:
+
+Component:
+```
+export class AppComponent {
+  textColor: string = 'blue';
+}
+```
+
+View:
+```
+<p [style.color]="textColor">This text has a dynamic color.</p>
+```
+Output:
+The text in the paragraph will have a blue color.
+
+3. Attribute Binding:
+
+Component:
+```
+export class AppComponent {
+  imageURL: string = 'path/to/image.png';
+}
+```
+
+View:
+```
+<img [src]="imageURL" alt="Dynamic Image">
+```
+Output:
+The image source will be set to the specified URL.
+
+4. Class Binding:
+
+Component:
+```
+export class AppComponent {
+  isHighlighted: boolean = true;
+}
+```
+
+View:
+```
+<p [class.highlighted]="isHighlighted">This paragraph is highlighted.</p>
+```
+Output:
+The paragraph text will have the "highlighted" class applied.
+
+5. Style Binding:
+
+Component:
+```
+export class AppComponent {
+  fontSize: string = '20px';
+}
+```
+
+View:
+```
+<p [style.font-size]="fontSize">This text has a dynamic font size.</p>
+```
+Output:
+The font size of the paragraph text will be set to 20 pixels.
+
+   **`From view to component 👍👍👍`**:
+
+   - Event binding
+   ```
+    import { Component } from '@angular/core';
+    @Component({
+    selector: 'app-root',
+    template: `
+    <div style="text-align: center;">
+    <h1>{{title}}</h1>
+    <button (click)="handleClick('Hello from the view!')">Click me</button>
+
+    </div>
+    `
+    })
+    export class AppComponent {
+    title = 'learning angular';
+
+    handleClick(val: String) {
+        alert(val)
+    }
+    }
+   ```
+
 ---
 ---
 
-1. Introduction to Angular: Learn about the basics of Angular, its history, features, and advantages. [Angular Introduction](https://angular.io/guide/architecture)
 
-2. Setting up the Development Environment: Understand how to set up your development environment for Angular, including installing Node.js, npm, and Angular CLI. [Angular Setup Guide](https://angular.io/guide/setup-local)
+**`Two-way data binding 👍👍👍`**:
 
-3. TypeScript Fundamentals: Get familiar with TypeScript, a superset of JavaScript used in Angular development. Learn about TypeScript's features, syntax, and how it enhances JavaScript. [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+Two-way data binding allows the data to flow in both directions, from the component to the template and from the template to the component. It means that changes in the component property will reflect in the template, and changes in the template will update the component property.
 
-4. Angular Components: Dive into Angular's component-based architecture, which allows you to build reusable UI elements. Learn how to create, use, and communicate between components. [Angular Components Guide](https://angular.io/guide/architecture-components)
+- `[(ngModel)]` is a common syntax used for two-way data binding in Angular. It combines property binding and event binding to achieve two-way binding.
 
-5. Angular Templates and Data Binding: Explore Angular's template syntax and data binding capabilities, which enable dynamic rendering of data in the UI. [Angular Templates Guide](https://angular.io/guide/template-syntax)
+Example:
 
-6. Directives in Angular: Understand Angular directives, such as structural and attribute directives, and how they manipulate the DOM and enhance component functionality. [Angular Directives Guide](https://angular.io/guide/attribute-directives)
+Component:
+```typescript
+import { Component } from '@angular/core';
 
-7. Angular Services and Dependency Injection: Learn about Angular services and the concept of dependency injection, which facilitate sharing data and functionality across components. [Angular Services and Dependency Injection Guide](https://angular.io/guide/architecture-services)
+@Component({
+  selector: 'app-example',
+  template: `
+    <input [(ngModel)]="name" placeholder="Enter your name">
+    <p>Welcome, {{ name }}!</p>
+  `
+})
+export class ExampleComponent {
+  name: string = 'John Doe';
+}
+```
 
-8. Angular Routing and Navigation: Discover how to implement navigation and routing within your Angular application, enabling users to move between different views. [Angular Routing and Navigation Guide](https://angular.io/guide/router)
+In this example, we have an input field bound to the `name` property using `[(ngModel)]`. Whatever value the user enters in the input field will be reflected in the `name` property, and the paragraph below will display a personalized welcome message.
 
-9. Angular Forms and Validation: Learn how to create forms in Angular, handle user input, perform validation, and display error messages. [Angular Reactive Forms Guide](https://angular.io/guide/reactive-forms)
+The initial value of the `name` property is set to "John Doe". If the user changes the value in the input field, the `name` property will be automatically updated, and the paragraph will display the updated welcome message.
 
-10. Angular HTTP Client and RESTful APIs: Explore Angular's built-in HTTP client module to interact with RESTful APIs and perform CRUD operations. [Angular HTTP Client Guide](https://angular.io/guide/http)
+This demonstrates two-way data binding as changes in the template (input field) affect the component property (`name`), and changes in the component property (`name`) are reflected in the template.
 
-11. State Management with Angular: Understand how to manage application state effectively using Angular's state management solutions, including RxJS and NgRx. [RxJS Official Documentation](https://rxjs.dev/guide/overview) | [NgRx Official Documentation](https://ngrx.io/docs)
-
-12. Angular Pipes: Learn about Angular pipes, which allow you to transform and format data within templates. [Angular Pipes Guide](https://angular.io/guide/pipes)
-
-13. Unit Testing in Angular: Discover how to write and run unit tests for your Angular application using testing frameworks like Jasmine and Karma. [Angular Testing Guide](https://angular.io/guide/testing)
-
-14. Angular Performance Optimization: Learn about various techniques and best practices to optimize the performance of your Angular application. [Angular Performance Optimization Guide](https://angular.io/guide/optimization)
-
-15. Angular Deployment Strategies: Explore different deployment strategies for Angular applications, including hosting options, build optimizations, and continuous integration. [Angular Deployment Guide](https://angular.io/guide/deployment)
-
-16. Angular Security and Authentication: Understand how to implement authentication and authorization in Angular applications, ensuring secure access to protected resources. [Angular Authentication Guide](https://angular.io/guide/http#authentication)
-
-17. Angular Internationalization (i18n): Learn how to internationalize your Angular application, allowing it to support multiple languages and locales. [Angular Internationalization Guide](https://angular.io/guide/i18n)
-
-18. Angular Material for UI Components: Discover Angular Material, a UI component library for
-
- Angular applications, offering pre-built and customizable UI components. [Angular Material Official Documentation](https://material.angular.io/)
-
-19. Angular CLI (Command Line Interface) and Project Structure: Understand how to use the Angular CLI to scaffold, build, and manage your Angular projects efficiently. [Angular CLI Official Documentation](https://angular.io/cli)
-
-20. Angular Best Practices and Design Patterns: Learn about industry best practices and design patterns specific to Angular development, ensuring clean, maintainable, and scalable code. [Angular Best Practices Guide](https://angular.io/guide/styleguide)
-
-
+---
+---
+`git push origin data_binding`
