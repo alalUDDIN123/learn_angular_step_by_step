@@ -78,4 +78,4 @@
 
 ---
 ---
-`git push origin common-command`
+`git push origin common_command`
