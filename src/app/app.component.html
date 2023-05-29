@@ -1,0 +1,242 @@
+<!-- template driven form -->
+<div class="container" *ngIf="isShowTemplateDrivenForm">
+  <h2>Registration Form</h2>
+  <p>Two-way data binding (Template Driven Form)</p>
+  <form #registrationForm="ngForm" (ngSubmit)="handleRegistrationForm(registrationForm)">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" minlength="4" maxlength="10" #nameInput="ngModel" name="name" autocomplete="off"
+        [(ngModel)]="UserRegistration.name" required>
+      <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+        <div *ngIf="nameInput.errors?.['required']">Name is required.</div>
+        <div *ngIf="nameInput.errors?.['minlength']">Name should have at least 4 characters.</div>
+        <div *ngIf="nameInput.errors?.['maxlength']">Name cannot exceed 10 characters.</div>
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" #emailInput="ngModel" autocomplete="off"
+        [(ngModel)]="UserRegistration.email" required>
+      <div *ngIf="emailInput.invalid && (emailInput.dirty || nameInput.touched)">
+        <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" #passwordInput="ngModel" minlength="5" maxlength="8"
+        autocomplete="off" [(ngModel)]="UserRegistration.password" required>
+      <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+        <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+        <div *ngIf="passwordInput.errors?.['minlength']">Password should have at least 6 characters.</div>
+        <div *ngIf="passwordInput.errors?.['maxlength']">Password cannot exceed 8 characters.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" #ConfirmpasswordInput="ngModel" minlength="5"
+        maxlength="8" autocomplete="off" [(ngModel)]="UserRegistration.confirmPassword" required>
+
+      <div *ngIf="ConfirmpasswordInput.invalid && (ConfirmpasswordInput.dirty || ConfirmpasswordInput.touched)">
+        <div *ngIf="ConfirmpasswordInput.errors?.['required']">Confirm Password is required.</div>
+        <div *ngIf="ConfirmpasswordInput.errors?.['minlength']"> Confirm Password should have at least 6 characters.
+        </div>
+        <div *ngIf="ConfirmpasswordInput.errors?.['maxlength']"> Confirm Password cannot exceed 8 characters.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <select id="country" name="country" #countryInput="ngModel" [(ngModel)]="UserRegistration.country" required>
+        <option value="" selected disabled>-- Select Country --</option>
+        <option value="India">India</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Germany">Germany</option>
+        <option value="France">France</option>
+      </select>
+
+      <div *ngIf="countryInput.invalid && (countryInput.dirty || countryInput.touched)">
+        <div *ngIf="countryInput.errors?.['required']">Country is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Register" [disabled]="registrationForm.invalid">
+    </div>
+  </form>
+  <p class="toggle-button" (click)="isShowTemplateDrivenForm = !isShowTemplateDrivenForm">
+    {{ isShowTemplateDrivenForm ? "Show Reactive Form" : "Show Template Driven Form" }}
+  </p>
+  
+  
+</div>
+
+
+<!-- reactive form -->
+
+<div *ngIf="!isShowTemplateDrivenForm">
+  <div class="container mt-4">
+
+    <h1 class="text-center">Reactive form with validation in simplest way</h1>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="registerForm.status !== 'INVALID' && registerFn()">
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="fname" class="form-label">First Name</label>
+  
+        <input type="text" class="form-control" id="fname" placeholder="First Name" formControlName="fname" [ngClass]="{error : getControl('fname')?.errors && getControl('fname')?.touched}">
+  
+        <div *ngIf="getControl('fname')?.errors && getControl('fname')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('fname')?.errors?.['required']">First Name field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('fname')?.errors?.['maxlength']">Only 32 characters are allowed.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="lname" class="form-label">Last Name</label>
+  
+        <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="lname" [ngClass]="{error : getControl('lname')?.errors && getControl('lname')?.touched}">
+  
+        <div *ngIf="getControl('lname')?.errors && getControl('lname')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('lname')?.errors?.['required']">Last Name field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('lname')?.errors?.['maxlength']">Only 32 characters are allowed.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="age" class="form-label">Age</label>
+  
+        <input type="number" class="form-control" id="age" placeholder="Age" formControlName="age" [ngClass]="{error : getControl('age')?.errors && getControl('age')?.touched}">
+  
+        <div *ngIf="getControl('age')?.errors && getControl('age')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('age')?.errors?.['required']">Age field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('age')?.errors?.['min'] || getControl('age')?.errors?.['max']">Age must be in between 18 years to 60 years.</small><br>
+  
+          <small class="text-danger" *ngIf="getControl('age')?.errors?.['pattern']">Please enter a valid age.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="mobile" class="form-label">Mobile</label>
+  
+        <input type="text" class="form-control" id="mobile" placeholder="Mobile" formControlName="mobile" [ngClass]="{error : getControl('mobile')?.errors && getControl('mobile')?.touched}">
+  
+        <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('mobile')?.errors?.['required']">Mobile field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['pattern']">Please enter a valid mobile no.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="email" class="form-label">Email</label>
+  
+        <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [ngClass]="{error : getControl('email')?.errors && getControl('email')?.touched}">
+  
+        <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Email should be maximum 32 characters long.</small>
+  
+          <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a valid email.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="password" class="form-label">Password</label>
+  
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched}">
+  
+        <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['maxlength']">Password should be minimum 8 and maximum 32 characters long.</small>
+  
+        </div>
+  
+      </div>
+  
+   
+  
+      <div class="mb-3">
+  
+        <label for="confirm_password" class="form-label">Confirm Password</label>
+  
+        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" formControlName="confirm_password" [ngClass]="{error : getControl('confirm_password')?.errors && getControl('confirm_password')?.touched}">
+  
+        <div *ngIf="getControl('confirm_password')?.errors && getControl('confirm_password')?.touched">
+  
+          <small class="text-danger" *ngIf="getControl('confirm_password')?.errors?.['required']">Confirm Password field is requird</small>
+  
+          <small class="text-danger" *ngIf="getControl('confirm_password')?.errors?.['maxlength'] || getControl('confirm_password')?.errors?.['maxlength']">Confirm Password should be minimum 8 and maximum 32 characters long.</small>
+  
+        </div>
+
+        <div *ngIf="registerForm.errors?.['passwordMismatcgError'] && getControl('confirm_password')?.touched">
+
+          <small class="text-danger">Confirm passwords do not match </small>
+  
+        </div>
+  
+      </div>
+  
+     
+  
+      <div class="mb-3">
+  
+        <input type="submit" class="btn btn-success" [disabled]="registerForm.status === 'INVALID'">
+  
+      </div>
+  
+    </form>
+    <p class="toggle-button" (click)="isShowTemplateDrivenForm = !isShowTemplateDrivenForm">
+      {{ isShowTemplateDrivenForm ? "Show Reactive Form" : "Show Template Driven Form" }}
+    </p>
+    
+  
+  </div> 
+</div>
+
