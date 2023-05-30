@@ -1,47 +1,68 @@
-## A list of content/topics typically covered in learning Angular:
----
----
+# Play With Data Binding
 
-1. Introduction to Angular: Learn about the basics of Angular, its history, features, and advantages. [Angular Introduction](https://angular.io/guide/architecture)
+This project demonstrates data binding using Angular. It allows us to enter text, adjust font size, and change text color dynamically. The following sections explain the functionality of each element in the code.
 
-2. Setting up the Development Environment: Understand how to set up your development environment for Angular, including installing Node.js, npm, and Angular CLI. [Angular Setup Guide](https://angular.io/guide/setup-local)
+## Elements
 
-3. TypeScript Fundamentals: Get familiar with TypeScript, a superset of JavaScript used in Angular development. Learn about TypeScript's features, syntax, and how it enhances JavaScript. [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+### Text Input
+```html
+<input type="text" placeholder="Enter any text" (keyup)="getValue($event)">
+```
+This input element captures the text entered by the user and triggers the `getValue` function on each keyup event.
 
-4. Angular Components: Dive into Angular's component-based architecture, which allows you to build reusable UI elements. Learn how to create, use, and communicate between components. [Angular Components Guide](https://angular.io/guide/architecture-components)
+### Display Typed Text
+```html
+<p>You type: <span>{{typeText}}</span></p>
+```
+This paragraph element displays the text typed by the user. The `typeText` variable is used for data binding, and it will update dynamically as the user types.
 
-5. Angular Templates and Data Binding: Explore Angular's template syntax and data binding capabilities, which enable dynamic rendering of data in the UI. [Angular Templates Guide](https://angular.io/guide/template-syntax)
+### Font Size Range Slider
+```html
+<input type="range" (input)="getRange($event)" [value]="rangeValue" [disabled]="typeText === ''">
+```
+This input element is a range slider that allows the user to adjust the font size. The `getRange` function is triggered on each input event, and the `rangeValue` variable is used for data binding. The `rangeValue` variable sets the initial value of the range slider. If the text input is empty (`typeText === ''`), the range slider will be disabled.
 
-6. Directives in Angular: Understand Angular directives, such as structural and attribute directives, and how they manipulate the DOM and enhance component functionality. [Angular Directives Guide](https://angular.io/guide/attribute-directives)
+### Increase Font Size Button
+```html
+<button class="inc" (click)="fontSizeSet('inc')" [disabled]="typeText === ''">+</button>
+```
+This button increases the font size when clicked. It triggers the `fontSizeSet` function with the parameter `'inc'`. The button is disabled if the text input is empty (`typeText === ''`).
 
-7. Angular Services and Dependency Injection: Learn about Angular services and the concept of dependency injection, which facilitate sharing data and functionality across components. [Angular Services and Dependency Injection Guide](https://angular.io/guide/architecture-services)
+### Decrease Font Size Button
+```html
+<button class="dec" (click)="fontSizeSet('dec')" [disabled]="typeText === '' || rangeValue < 1">-</button>
+```
+This button decreases the font size when clicked. It triggers the `fontSizeSet` function with the parameter `'dec'`. The button is disabled if the text input is empty (`typeText === ''`) or if the range value is less than 1.
 
-8. Angular Routing and Navigation: Discover how to implement navigation and routing within your Angular application, enabling users to move between different views. [Angular Routing and Navigation Guide](https://angular.io/guide/router)
+### Text Color Selection
+```html
+<select (change)="setColor($event)" [disabled]="typeText === ''">
+  <option value="" selected disabled>Select Text color</option>
+  <option value="primary">Primary</option>
+  <option value="secondary">Secondary</option>
+  <option value="success">Success</option>
+  <option value="warning">Warning</option>
+  <option value="danger">Danger</option>
+</select>
+```
+This select element allows the user to choose a text color. The `setColor` function is triggered on each change event. The select element is disabled if the text input is empty (`typeText === ''`).
 
-9. Angular Forms and Validation: Learn how to create forms in Angular, handle user input, perform validation, and display error messages. [Angular Reactive Forms Guide](https://angular.io/guide/reactive-forms)
+### Current Font Size
+```html
+<p>Current font-size: {{rangeValue}}px</p>
+```
+This paragraph element displays the current font size value in pixels.
 
-10. Angular HTTP Client and RESTful APIs: Explore Angular's built-in HTTP client module to interact with RESTful APIs and perform CRUD operations. [Angular HTTP Client Guide](https://angular.io/guide/http)
+### Text Font Size
+```html
+<p>Text font-size: <span [style.fontSize.px]="rangeValue">{{typeText}}</span></p>
+```
+This paragraph element displays the text with a font size equal to the range value set by the user. The `style.fontSize.px` binding sets the font size dynamically based on the `rangeValue` variable.
 
-11. State Management with Angular: Understand how to manage application state effectively using Angular's state management solutions, including RxJS and NgRx. [RxJS Official Documentation](https://rxjs.dev/guide/overview) | [NgRx Official Documentation](https://ngrx.io/docs)
+### Font Color
+```html
+<p>Font Color: <span class={{textColor}} style="font-size: 40px;">{{typeText}}</span></p>
+```
+This paragraph element displays the text with a font color chosen by the user. The `class` binding is used to apply the text color dynamically based on the `textColor` variable. The `style.fontSize
 
-12. Angular Pipes: Learn about Angular pipes, which allow you to transform and format data within templates. [Angular Pipes Guide](https://angular.io/guide/pipes)
-
-13. Unit Testing in Angular: Discover how to write and run unit tests for your Angular application using testing frameworks like Jasmine and Karma. [Angular Testing Guide](https://angular.io/guide/testing)
-
-14. Angular Performance Optimization: Learn about various techniques and best practices to optimize the performance of your Angular application. [Angular Performance Optimization Guide](https://angular.io/guide/optimization)
-
-15. Angular Deployment Strategies: Explore different deployment strategies for Angular applications, including hosting options, build optimizations, and continuous integration. [Angular Deployment Guide](https://angular.io/guide/deployment)
-
-16. Angular Security and Authentication: Understand how to implement authentication and authorization in Angular applications, ensuring secure access to protected resources. [Angular Authentication Guide](https://angular.io/guide/http#authentication)
-
-17. Angular Internationalization (i18n): Learn how to internationalize your Angular application, allowing it to support multiple languages and locales. [Angular Internationalization Guide](https://angular.io/guide/i18n)
-
-18. Angular Material for UI Components: Discover Angular Material, a UI component library for
-
- Angular applications, offering pre-built and customizable UI components. [Angular Material Official Documentation](https://material.angular.io/)
-
-19. Angular CLI (Command Line Interface) and Project Structure: Understand how to use the Angular CLI to scaffold, build, and manage your Angular projects efficiently. [Angular CLI Official Documentation](https://angular.io/cli)
-
-20. Angular Best Practices and Design Patterns: Learn about industry best practices and design patterns specific to Angular development, ensuring clean, maintainable, and scalable code. [Angular Best Practices Guide](https://angular.io/guide/styleguide)
-
-
+` attribute is set to 40 pixels.

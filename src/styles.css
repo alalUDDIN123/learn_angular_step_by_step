@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+.main_container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main_container button {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.inc {
+    background-color: blue;
+}
+
+.inc:disabled {
+    background-color: rgb(219, 219, 231);
+    cursor: not-allowed;
+}
+
+.dec {
+    background-color: red;
+}
+
+.dec:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+
+p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+p span {
+    color: blue;
+}
+
+p:first-child {
+    font-weight: bold;
+}
+
+p:last-child {
+    margin-top: 20px;
+}
+
+
+.primary {
+    color: blue !important;
+}
+
+.secondary {
+    color: gray !important;
+}
+
+.success {
+    color: green !important;
+}
+
+.warning {
+    color: orange !important;
+}
+
+.danger {
+    color: red !important;
+}
+

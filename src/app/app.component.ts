@@ -6,5 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'learn_angular';
+  typeText = '';
+  rangeValue = 16;
+  textColor = '';
+
+  getValue(event: any) {
+    this.typeText = event.target.value;
+  }
+
+  getRange(event: any) {
+    this.rangeValue = event.target.value;
+  }
+
+  fontSizeSet(action: string) {
+    if (action === 'inc') {
+      this.rangeValue++;
+    } else if (action === 'dec') {
+      this.rangeValue--;
+    }
+  }
+
+  setColor(event: any) {
+    this.textColor = event.target.value;
+  }
+
+
 }
+
+
+
+
