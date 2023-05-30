@@ -66,3 +66,6 @@ This paragraph element displays the text with a font size equal to the range val
 This paragraph element displays the text with a font color chosen by the user. The `class` binding is used to apply the text color dynamically based on the `textColor` variable. The `style.fontSize
 
 ` attribute is set to 40 pixels.
+---
+---
+`git push origin play_with_data_binding`
