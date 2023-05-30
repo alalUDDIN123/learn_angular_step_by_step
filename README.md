@@ -1,47 +1,98 @@
-## A list of content/topics typically covered in learning Angular:
+# Directives in Angular
+
+Directives are a fundamental part of Angular and provide a way to add additional behavior to elements in our Angular applications. 
+
+  There are three types of directives in Angular:
+
+  - **`Component directives`**
+  - **`Structural directives`**
+  - **`Attribute directives`**.
+
+## Component Directives
+
+Component directives are used to create reusable, self-contained components with their own template, styles, and logic. They are typically used to build complex UI elements. Here's an example:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-custom-component',
+  template: `
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
+  `,
+  styles: [
+    `
+    h1 {
+      color: blue;
+    }
+    `,
+  ],
+})
+export class CustomComponent {
+  title = 'Custom Component';
+  message = 'This is a custom component.';
+}
+```
+
+In this example, we define a custom component directive using the `@Component` decorator. The `selector` specifies the name of the component, and the `template` defines the HTML template for the component. The `styles` property allows you to provide component-specific styles.
+
+---
+---
+## Structural Directives
+
+Structural directives manipulate the DOM by adding or removing elements based on conditions. They use the `*` prefix in the template syntax. The most commonly used structural directive is `ngIf`, which conditionally adds or removes an element from the DOM. There are three main built-in structural directives:
+
+1. `ngIf`: Conditionally adds or removes an element from the DOM.
+2. `ngFor`: Loops over a collection and generates multiple elements.
+3. `ngSwitch`: Conditionally renders elements based on a value.
+
+Here's an example of `ngIf`:
+
+```html
+<div *ngIf="isLoggedIn">Welcome, {{ username }}!</div>
+```
+
+In this example, the `*ngIf` directive is applied to the `<div>` element. If the `isLoggedIn` property in the component evaluates to `true`, the `<div>` will be rendered; otherwise, it will be removed from the DOM.
+
+---
+---
+## Attribute Directives : 
+
+ Attribute directives in Angular modify the behavior or appearance of an element by manipulating its attributes. Angular provides several built-in attribute directives that you can use out of the box. Let's explore some of the commonly used built-in attribute directives:
+
+### ngClass
+
+The `ngClass` directive allows you to conditionally apply CSS classes to an element based on certain conditions. You can use it to add or remove classes dynamically. Here's an example:
+
+```html
+<button [ngClass]="{ 'active': isActive, 'disabled': isDisabled }">Button</button>
+```
+
+In this example, the `ngClass` directive is applied to the `<button>` element. The classes `'active'` and `'disabled'` will be added to the button element based on the values of `isActive` and `isDisabled` properties in the component.
+
+### ngStyle
+
+The `ngStyle` directive enables you to apply inline styles to an element based on dynamic conditions. It allows you to dynamically set CSS styles using an object literal or by binding to a component property. Here's an example:
+
+```html
+<div [ngStyle]="{ 'background-color': bgColor, 'color': textColor }">Styled Div</div>
+```
+
+In this example, the `ngStyle` directive is applied to the `<div>` element. The `bgColor` and `textColor` properties in the component determine the background color and text color of the div, respectively.
+
+### ngModel
+
+The `ngModel` directive is used in forms for two-way data binding. It binds the value of an input element to a component property and keeps them in sync. It allows you to both set and get the value of the input field. Here's an example:
+
+```html
+<input [(ngModel)]="name" placeholder="Enter your name" />
+<p>Your name is: {{ name }}</p>
+```
+
+In this example, the `ngModel` directive is applied to the `<input>` element, binding it to the `name` property in the component. Any changes in the input field will be reflected in the component, and vice versa.
+
 ---
 ---
 
-1. Introduction to Angular: Learn about the basics of Angular, its history, features, and advantages. [Angular Introduction](https://angular.io/guide/architecture)
-
-2. Setting up the Development Environment: Understand how to set up your development environment for Angular, including installing Node.js, npm, and Angular CLI. [Angular Setup Guide](https://angular.io/guide/setup-local)
-
-3. TypeScript Fundamentals: Get familiar with TypeScript, a superset of JavaScript used in Angular development. Learn about TypeScript's features, syntax, and how it enhances JavaScript. [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-
-4. Angular Components: Dive into Angular's component-based architecture, which allows you to build reusable UI elements. Learn how to create, use, and communicate between components. [Angular Components Guide](https://angular.io/guide/architecture-components)
-
-5. Angular Templates and Data Binding: Explore Angular's template syntax and data binding capabilities, which enable dynamic rendering of data in the UI. [Angular Templates Guide](https://angular.io/guide/template-syntax)
-
-6. Directives in Angular: Understand Angular directives, such as structural and attribute directives, and how they manipulate the DOM and enhance component functionality. [Angular Directives Guide](https://angular.io/guide/attribute-directives)
-
-7. Angular Services and Dependency Injection: Learn about Angular services and the concept of dependency injection, which facilitate sharing data and functionality across components. [Angular Services and Dependency Injection Guide](https://angular.io/guide/architecture-services)
-
-8. Angular Routing and Navigation: Discover how to implement navigation and routing within your Angular application, enabling users to move between different views. [Angular Routing and Navigation Guide](https://angular.io/guide/router)
-
-9. Angular Forms and Validation: Learn how to create forms in Angular, handle user input, perform validation, and display error messages. [Angular Reactive Forms Guide](https://angular.io/guide/reactive-forms)
-
-10. Angular HTTP Client and RESTful APIs: Explore Angular's built-in HTTP client module to interact with RESTful APIs and perform CRUD operations. [Angular HTTP Client Guide](https://angular.io/guide/http)
-
-11. State Management with Angular: Understand how to manage application state effectively using Angular's state management solutions, including RxJS and NgRx. [RxJS Official Documentation](https://rxjs.dev/guide/overview) | [NgRx Official Documentation](https://ngrx.io/docs)
-
-12. Angular Pipes: Learn about Angular pipes, which allow you to transform and format data within templates. [Angular Pipes Guide](https://angular.io/guide/pipes)
-
-13. Unit Testing in Angular: Discover how to write and run unit tests for your Angular application using testing frameworks like Jasmine and Karma. [Angular Testing Guide](https://angular.io/guide/testing)
-
-14. Angular Performance Optimization: Learn about various techniques and best practices to optimize the performance of your Angular application. [Angular Performance Optimization Guide](https://angular.io/guide/optimization)
-
-15. Angular Deployment Strategies: Explore different deployment strategies for Angular applications, including hosting options, build optimizations, and continuous integration. [Angular Deployment Guide](https://angular.io/guide/deployment)
-
-16. Angular Security and Authentication: Understand how to implement authentication and authorization in Angular applications, ensuring secure access to protected resources. [Angular Authentication Guide](https://angular.io/guide/http#authentication)
-
-17. Angular Internationalization (i18n): Learn how to internationalize your Angular application, allowing it to support multiple languages and locales. [Angular Internationalization Guide](https://angular.io/guide/i18n)
-
-18. Angular Material for UI Components: Discover Angular Material, a UI component library for
-
- Angular applications, offering pre-built and customizable UI components. [Angular Material Official Documentation](https://material.angular.io/)
-
-19. Angular CLI (Command Line Interface) and Project Structure: Understand how to use the Angular CLI to scaffold, build, and manage your Angular projects efficiently. [Angular CLI Official Documentation](https://angular.io/cli)
-
-20. Angular Best Practices and Design Patterns: Learn about industry best practices and design patterns specific to Angular development, ensuring clean, maintainable, and scalable code. [Angular Best Practices Guide](https://angular.io/guide/styleguide)
-
-
+`git push origin directives`
