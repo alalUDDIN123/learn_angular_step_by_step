@@ -6,6 +6,8 @@ import { InlineStyleComponent } from './inline-style/inline-style.component';
 import { InlineTemplateComponent } from './inline-template/inline-template.component';
 import { InlineComponent } from './inline/inline.component';
 import { MyDirectivesDirective } from './my-directives.directive';
+import { PipesPipe } from './pipes.pipe';
+import { AgePipe } from './pipes/age.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { MyDirectivesDirective } from './my-directives.directive';
     InlineStyleComponent,
     InlineTemplateComponent,
     InlineComponent,
-    MyDirectivesDirective
+    MyDirectivesDirective,
+    PipesPipe,
+    AgePipe
   ],
   imports: [
     BrowserModule

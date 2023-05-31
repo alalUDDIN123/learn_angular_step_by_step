@@ -7,13 +7,14 @@
 
    **Example:** `ng new my-app`
 
-2. **Generate Components, Directives, or Services**
+2. **Generate Components, Directives, Custom Pipes or Services**
 
    **Description:** Angular CLI provides commands to generate various Angular artifacts like components, directives, and services, reducing manual setup time.
 
    **Examples:**
    - Component: `ng generate component my-component`
    - Directive: `ng generate directive my-directive`
+   - Pipes: `ng generate pipe pipes/age`
    - Service: `ng generate service my-service`
    - Generate components in specific folders:
      - `ng generate component directives/my-component`
