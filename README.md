@@ -52,3 +52,4 @@
 ---
 
 `git push origin custom_directive`
+`ng generate directive directives/customWithParams --skip-tests` : for skipping spec file
