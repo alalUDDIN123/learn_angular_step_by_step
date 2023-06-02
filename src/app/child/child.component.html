@@ -1,0 +1,12 @@
+<p>child works!</p>
+<h3 *ngIf="GetData">{{GetData.name}}</h3>
+/////////////////////////////////////////////
+<br>
+<button (click)="sendData()">Send Data to Parent</button>
+<br>
+<br>
+<br>
+
+<input type="text" #inputVal placeholder="Enter todo">
+
+<button (click)="send(inputVal.value)">Send Data to Parent</button>
