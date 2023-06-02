@@ -7,9 +7,22 @@ import { Observable } from 'rxjs';
 })
 export class GithubApiService {
   private baseUrl = 'https://api.github.com';
+
+
   constructor(private http: HttpClient) { }
-  getRepositoryReadmeContent(data: any): Observable<any> {
-    const url = `${this.baseUrl}/repos/${data.username}/${data.repositoryName}/readme`;
+
+  // get repository readme content
+  getRepositoryReadmeContent(userEnteredData: any): Observable<any> {
+    const url = `${this.baseUrl}/repos/${userEnteredData?.username}/${userEnteredData.repositoryName}/readme`;
+    // console.log("url", url);
+
+    return this.http.get<any>(url);
+  }
+
+  // get repositories list
+
+  getRepositories(gethubUsername: any) {
+    const url = `${this.baseUrl}/users/${gethubUsername}/repos`;
     return this.http.get<any>(url);
   }
 

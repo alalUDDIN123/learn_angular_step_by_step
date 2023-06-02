@@ -1,26 +1,42 @@
-# Angular Step by Step
+# Readme Content Explorer
 
-Angular is a popular open-source JavaScript framework developed by Google for building dynamic web applications.
+## **`Project Overview`**
+Readme Content Explorer is a user-friendly website built with Angular that allows users to effortlessly search and explore public GitHub repositories. By providing easy access to README files, it enables users to discover and learn about various projects conveniently.
 
-To learn Angular, you can follow these steps:
+## **`Tech Stack Used`**
+The application was built using the following tech stack:
 
-1. [Installation and Setup](https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup)
-2. [Basic Angular Command or CLI](https://github.com/alalUDDIN123/angular_practice/tree/common_command)
-3. [Components](https://github.com/alalUDDIN123/angular_practice/tree/components)
-4. [Template and Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding)
-5. [Event Binding](https://github.com/alalUDDIN123/angular_practice/tree/even_binding)
-6. [Play with Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding)
-7. [Modules](https://github.com/alalUDDIN123/angular_practice/tree/module)
-8. [Form Handling](https://github.com/alalUDDIN123/angular_practice/tree/form_handling)
-9. [Directives](https://github.com/alalUDDIN123/angular_practice/tree/directives)
-10. [Custom Directives](https://github.com/alalUDDIN123/angular_practice/tree/custom_directive)
-11. [Pipes](https://github.com/alalUDDIN123/angular_practice/tree/pipes)
+- **Angular**: Angular was used for the frontend development, providing a powerful framework for building robust and scalable web applications.
+- **CSS**: CSS was used for styling and designing the user interfaces, ensuring visually appealing and responsive layouts.
+- **JSON-Server**: JSON-Server was utilized for backend simulation, enabling the application to interact with a mock API and handle data management effectively.
+
+## **`Duration`**
+The project was developed in approximately 8 hours.
+
+## **`Features`**
+
+1. **Search Public GitHub Repositories**: Users can quickly find relevant projects by searching for any public GitHub repository using keywords or the repository name. This functionality ensures efficient project discovery.
+
+2. **View README Content**: Users can enter the GitHub username and repository name to access detailed information about the content of the README file, if it exists.
+
+## **`Live View`**
+Visit the website to experience the Readme Content Explorer in action : [https://readmecontentexplorer.netlify.app/](https://readmecontentexplorer.netlify.app/)
+
+## **`How to Run Locally`**
+To run this application locally, follow these steps:
+
+1. Clone or download the code repository, which contains the frontend Angular code for the Readme Content Explorer website.
+2. Open the folder in your preferred terminal or code editor, such as VS Code.
+3. Install the required npm packages by running the command `npm install`.
+4. Start the project by running the command `ng serve`.
+   - Once the server is up and running, you can access the application locally at this URL: [http://localhost:4200/](http://localhost:4200/).
+   - Open the provided URL in any web browser to view and interact with the application.
 
 ---
----
-### `Contact Information` 📞
 
-If you have any further inquiries or need additional information, please feel free to contact me via email or phone:
+## Contact Information
+If you have any further inquiries or need additional information, please don't hesitate to contact me:
 
-- ✉️ Email: alalu75666@gmail.com
-- ☎️ Phone: +91 6002565574
+- Email: alalu75666@gmail.com
+- Phone: +91 6002565574
+
