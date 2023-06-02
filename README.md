@@ -16,6 +16,7 @@ To learn Angular, you can follow these steps:
 10. [Custom Directives](https://github.com/alalUDDIN123/angular_practice/tree/custom_directive)
 11. [Pipes](https://github.com/alalUDDIN123/angular_practice/tree/pipes)
 12. [Github Explorer](https://github.com/alalUDDIN123/angular_practice/tree/github_explorer)
+13. [Input and output decorator](https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator)
 
 ---
 ---
