@@ -1,68 +1,18 @@
-<h1 class="title">{{ title }}</h1>
+<h1>{{ title }}</h1>
 
-
-<!-- show only which are clickable link I mean external or branches attached -->
-<!-- <section class="container">
-  <div>
-    <label for="username">GitHub Username:</label>
-    <input id="username" type="text" [(ngModel)]="username" required>
-  </div>
-  <div>
-    <label for="repository">Repository Name:</label>
-    <input id="repository" type="text" [(ngModel)]="repositoryName" required>
-  </div>
-  <button (click)="fetchRepositoryReadmeContent()" class="btn">Get Readme Clickable Content</button>
-  <h2 *ngIf="isLoading" class="loading">Retrieving data, please wait...</h2>
-  <h1 *ngIf="errorMessage" class="error">{{ errorMessage }}</h1>
-  <div *ngIf="readmeContent && !errorMessage && !errorMessage" class="readme-content">
-    <ol>
-      <li *ngFor="let step of readmeSteps; let i = index" class="step">
-        <a [href]="step.link" target="_blank">{{ step.title }}</a>
-      </li>
-    </ol>
-  </div>
-</section> -->
-
-
-
-
-
-
-
-
-<!-- form or input taking container-->
-
-<section class="formContainer" *ngIf="!isContentDisplayed">
-  <div>
-    <label for="username">GitHub Username:</label>
-    <input id="username" type="text" [(ngModel)]="username" required>
-  </div>
-  <div>
-    <label for="repository">Repository Name:</label>
-    <input id="repository" type="text" [(ngModel)]="repositoryName" required>
-  </div>
-  <button (click)="fetchRepositoryReadmeContent()" class="btn">Get Content</button>
+<section class="main_cntainer" >
+  <ol>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup" target="_blank">Installation and Setup</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/common_command" target="_blank">Basic Angular Command or CLI</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/components"  target="_blank">Components</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding" target="_blank">Template and Data Binding</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/even_binding" target="_blank">Event Binding</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding" target="_blank">Play with Data Binding</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/module" target="_blank">Modules</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/form_handling" target="_blank">Form Handling</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/directives" target="_blank">Directives</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/custom_directive" target="_blank">Custom Directives</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/pipes" target="_blank">Pipes</a></li>
+    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/github_explorer" target="_blank">Github Explorer</a></li>
+  </ol>
 </section>
-
-
-<!-- loading container -->
-
-
-
-<!-- show complete readme content of a repository -->
-
-<section class="content_container">
-
-  <h2 *ngIf="isLoading" class="loading">Retrieving data, please wait...</h2>
-
-  <h1 *ngIf="errorMessage" class="error">{{ errorMessage }}</h1>
-
-  <div class="readme-content" *ngIf="readmeContent  && !errorMessage && isContentDisplayed">
-
-    <button (click)="showBtnClick()" class="btn">Show form</button>
-    <pre [innerHTML]="parseReadmeContentWithLinks()"></pre>
-  </div>
-
-
-</section>
-
