@@ -1,81 +1,116 @@
 # Angular Routing
 
-## Basic routing : This is basic routing setup. 
- Instead creating branch inside routing branch I had created tag respective to task
- - `git tag -a basic-routing -m "basic-routing"` 
+## Basic routing
+
+This is a basic routing setup that includes two components: `home` and `about`.
+
 ### Components
-  - `ng g c home`
-  - `ng g c about`
-    - path
-      - /
-      - /about
+
+- `home`
+- `about`
+
+#### Paths
+
+- `/` (home)
+- `/about`
+
+**Tag Commit:**
+
+- `git tag -a basic-routing -m "basic-routing"` (Tag commit for basic routing setup)
+- To checkout this tag, use the command: `git checkout basic-routing`
 
 ---
----
-## Intermidate routing : This is for dynamic routing setup
- - `git tag -a intermidate-routing -m "intermidate-routing"` 
+
+## Intermediate routing
+
+This is for dynamic routing setup and includes two components: `hero` and `hero-list`.
+
 ### Components
-  - `ng g c hero`
-  - `ng g c hero-list`  
-      - path
-        - /hero
-        - /hero/:id (dynamic id)
 
----
----
-## Advance routing : This is advancec routing where diffrent different module will be included along with not-found,laxy loading , redirect to and more...
- - `git tag -a advance-routing -m "advance-routing"` 
+- `hero`
+- `hero-list`
 
-**Advance routing folder and routing structure** 
+#### Paths
 
-```html
-## modules included
-   - `ng g m admin`
-   - `ng g m authenticate`
-   - `ng g m heroes`
+- `/hero`
+- `/hero/:id` (dynamic id)
 
-## components
+**Tag Commit:**
 
-- **`Inside app directory`**
-   - `ng g c home`
-
-- **`Inside admin module`**
-   - `ng g c admin/users --skip-tests=true `   
-   - `ng g c admin/admin-dashboard --skip-tests=true` 
+- `git tag -a intermediate-routing-m "intermidate-routing"` (Tag commit for intermediate routing setup)
+- To checkout this tag, use the command: `git checkout intermediate-routing`
 
 ---
 
-- **`Inside authenticate module`**
-   - `ng g c authenticate/login --skip-tests=true`   
-   - `ng g c authenticate/signup --skip-tests=true` 
+## Advanced routing
 
----
+This is an advanced routing setup that includes different modules, such as `admin`, `authenticate`, and `heroes`. It also includes additional features like not-found pages, lazy loading, and redirects.
 
+### Modules Included
 
-- **`Inside heroes module`**
-   - `ng g c heroes/hero-details --skip-tests=true`   
-   - `ng g c heroes/hero-list --skip-tests=true` 
- 
- With the above folder and file structure I want
- - routing
-   - Default home
-     - In the home component there will be four buttons
-       - login
-       - sign up
-       - hero
-       - admin (protected)
-   - path for admin
-      - /admin
-      - /admin/user
+- `admin`
+- `authenticate`
+- `heroes`
 
-    - path for authenticate
-      - /login
-      - /signup   
+### Components
 
-   - path for heroes
-      - /hero
-      - /hero/:id (here id will be dynamic)   
+- **Inside `app` directory**
+  - `home`
 
- - services
+- **Inside `admin` module**
+  - `users` (skipping tests)
+  - `admin-dashboard` (skipping tests)
 
- ```
+- **Inside `authenticate` module**
+  - `login` (skipping tests)
+  - `signup` (skipping tests)
+
+- **Inside `heroes` module**
+  - `hero-details` (skipping tests)
+  - `hero-list` (skipping tests)
+
+With the above folder and file structure, the desired routing setup is as follows:
+
+### Routing
+
+- Default home
+  - The `home` component will have four buttons:
+    - Login
+    - Sign up
+    - Hero
+    - Admin (protected)
+
+- Paths for `admin`
+  - `/admin`
+  - `/admin/user`
+
+- Paths for `authenticate`
+  - `/login`
+  - `/signup`
+
+- Paths for `heroes`
+  - `/hero`
+  - `/hero/:id` (here `id` will be dynamic)
+
+**Tag Commit:**
+
+- `git tag -a advance-routing -m "advance-routing"` (Tag commit for advanced routing setup)
+- To checkout this tag, use the command: `git checkout advance-routing`
+
+### Services
+
+To enhance the functionality of this Angular application, We can add various services. Here are some examples:
+
+1. AuthenticationService: Handles user authentication, login, and signup functionality.
+2. AdminService: Provides methods for managing admin-related data, such as user management.
+3. HeroService: Manages hero-related data, including fetching heroes, adding new heroes, and updating hero details.
+4. ErrorHandlingService: Handles error handling and provides centralized error reporting and logging.
+
+We can create these services using the Angular CLI:
+
+```
+ng generate service authentication
+ng generate service admin
+ng generate service hero
+ng generate service error-handling
+```
