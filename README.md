@@ -25,7 +25,7 @@ This is a basic routing setup that includes two components: `home` and `about`.
 
 This is for dynamic routing setup and includes two components: `hero` and `hero-list`.
 
-### Components
+### Components  
 
 - `hero`
 - `hero-list`
