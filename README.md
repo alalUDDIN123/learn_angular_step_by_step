@@ -16,7 +16,7 @@ This is a basic routing setup that includes two components: `home` and `about`.
 
 **Tag Commit:**
 
-- `git tag -a basic-routing -m "basic-routing"` (Tag commit for basic routing setup)
+- `git tag basic-routing` (Create tag)
 - To checkout this tag, use the command: `git checkout basic-routing`
 
 ---
@@ -37,7 +37,7 @@ This is for dynamic routing setup and includes two components: `hero` and `hero-
 
 **Tag Commit:**
 
-- `git tag -a intermediate-routing-m "intermidate-routing"` (Tag commit for intermediate routing setup)
+- `git tag intermediate-routing` (Create tag)
 - To checkout this tag, use the command: `git checkout intermediate-routing`
 
 ---
@@ -94,7 +94,7 @@ With the above folder and file structure, the desired routing setup is as follow
 
 **Tag Commit:**
 
-- `git tag -a advance-routing -m "advance-routing"` (Tag commit for advanced routing setup)
+- `git tag advance-routing` (Create tag)
 - To checkout this tag, use the command: `git checkout advance-routing`
 
 ### Services
