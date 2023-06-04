@@ -1,3 +1,10 @@
 <section style="text-align: center;">
   <h1>{{ title }}</h1>
+  <button routerLink="" [class.active]="currentRoute === '/'">Home</button>
+  <button routerLink="about" [class.active]="currentRoute === '/about'">About</button>
+  <button routerLink="hero" [class.active]="currentRoute === '/hero'">Hero</button>
+
+  <!-- router component -->
+  <router-outlet></router-outlet>
+
 </section>

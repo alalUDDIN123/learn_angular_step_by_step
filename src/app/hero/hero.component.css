@@ -1,0 +1,21 @@
+.heroes-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hero-item {
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid red;
+    padding-bottom: 10px;
+}
+
+.hero-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.hero-link:hover {
+    color: #007bff;
+}
