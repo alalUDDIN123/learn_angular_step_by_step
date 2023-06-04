@@ -4,4 +4,4 @@
 ---
 ---
 
-`git push origin state_managment_ngrx`
+`git push origin state_managments_ngrx`
