@@ -1,28 +1,57 @@
-# Angular Step by Step
+# Angular Routing
 
-Angular is a popular open-source JavaScript framework developed by Google for building dynamic web applications.
-
-To learn Angular, you can follow these steps:
-
-1. [Installation and Setup](https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup)
-2. [Basic Angular Command or CLI](https://github.com/alalUDDIN123/angular_practice/tree/common_command)
-3. [Components](https://github.com/alalUDDIN123/angular_practice/tree/components)
-4. [Template and Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding)
-5. [Event Binding](https://github.com/alalUDDIN123/angular_practice/tree/even_binding)
-6. [Play with Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding)
-7. [Modules](https://github.com/alalUDDIN123/angular_practice/tree/module)
-8. [Form Handling](https://github.com/alalUDDIN123/angular_practice/tree/form_handling)
-9. [Directives](https://github.com/alalUDDIN123/angular_practice/tree/directives)
-10. [Custom Directives](https://github.com/alalUDDIN123/angular_practice/tree/custom_directive)
-11. [Pipes](https://github.com/alalUDDIN123/angular_practice/tree/pipes)
-12. [Github Explorer](https://github.com/alalUDDIN123/angular_practice/tree/github_explorer)
-13. [Input and output decorator](https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator)
+## Basic routing
+ 
+### Components
+  `ng g c home`
 
 ---
 ---
-### `Contact Information` 📞
+## modules included
+   - `ng g m admin`
+   - `ng g m authenticate`
+   - `ng g m heroes`
 
-If you have any further inquiries or need additional information, please feel free to contact me via email or phone:
+## components
 
-- ✉️ Email: alalu75666@gmail.com
-- ☎️ Phone: +91 6002565574
+- **`Inside app directory`**
+   - `ng g c home`
+
+- **`Inside admin module`**
+   - `ng g c admin/users --skip-tests=true `   
+   - `ng g c admin/admin-dashboard --skip-tests=true` 
+
+---
+
+- **`Inside authenticate module`**
+   - `ng g c authenticate/login --skip-tests=true`   
+   - `ng g c authenticate/signup --skip-tests=true` 
+
+---
+
+
+- **`Inside heroes module`**
+   - `ng g c heroes/hero-details --skip-tests=true`   
+   - `ng g c heroes/hero-list --skip-tests=true` 
+ 
+ With the above folder and file structure I want
+ - routing
+   - Default home
+     - In the home component there will be four buttons
+       - login
+       - sign up
+       - hero
+       - admin (protected)
+   - path for admin
+      - /admin
+      - /admin/user
+
+    - path for authenticate
+      - /login
+      - /signup   
+
+   - path for heroes
+      - /hero
+      - /hero/:id (here id will be dynamic)   
+
+ - services
