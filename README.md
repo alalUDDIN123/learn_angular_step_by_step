@@ -82,22 +82,6 @@ With the above folder and file structure, the desired routing setup is as follow
 - Paths for `heroes`
   - `/hero`
   - `/hero/:id` (here `id` will be dynamic)
-
-
-### Services
-
-To enhance the functionality of this Angular application, We can add various services. Here are some examples:
-
-1. AuthenticationService: Handles user authentication, login, and signup functionality.
-2. AdminService: Provides methods for managing admin-related data, such as user management.
-3. HeroService: Manages hero-related data, including fetching heroes, adding new heroes, and updating hero details.
-4. ErrorHandlingService: Handles error handling and provides centralized error reporting and logging.
-
-We can create these services using the Angular CLI:
-
-```
-ng generate service authentication
-ng generate service admin
-ng generate service hero
-ng generate service error-handling
-```
+---
+---
+`git push origin routing`
