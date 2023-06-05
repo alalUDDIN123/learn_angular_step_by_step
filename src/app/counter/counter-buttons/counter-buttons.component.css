@@ -1,0 +1,4 @@
+.btn-warning:disabled {
+    background-color: brown;
+    cursor: not-allowed
+}
