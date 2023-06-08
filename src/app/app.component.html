@@ -1,20 +1,36 @@
-<h1>{{ title }}</h1>
+<section class="main_container">
+  <h1>{{ title }}</h1>
+  <!-- create data -->
+  <form (submit)="createData()" *ngIf="isCreateFormVisible">
+    <h3>Create Data</h3>
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="newItem.title" name="title">
+    <label for="status">Status:</label>
+    <input type="text" id="status" [(ngModel)]="newItem.status" name="status">
+    <button type="submit">Create</button>
+  </form>
 
-<section class="main_cntainer" >
-  <ol>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup" target="_blank">Installation and Setup</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/common_command" target="_blank">Basic Angular Command or CLI</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/components"  target="_blank">Components</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding" target="_blank">Template and Data Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/even_binding" target="_blank">Event Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding" target="_blank">Play with Data Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/module" target="_blank">Modules</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/form_handling" target="_blank">Form Handling</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/directives" target="_blank">Directives</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/custom_directive" target="_blank">Custom Directives</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/pipes" target="_blank">Pipes</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/github_explorer" target="_blank">Github Explorer</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator" target="_blank">Input and Output decorator</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/routing" target="_blank">Routing</a></li>
-  </ol>
+  <!-- edit data -->
+  <form (submit)="updateData()" *ngIf="!isCreateFormVisible">
+    <h3>Edit Data of id : {{editItem.id }}</h3>
+    <label for="editTitle">Title:</label>
+    <input type="text" id="editTitle" [(ngModel)]="editItem.title" name="title">
+    <label for="editStatus">Status:</label>
+    <input type="text" id="editStatus" [(ngModel)]="editItem.status" name="status">
+    <button type="submit">Update</button>
+  </form>
+
+  <!-- showing data -->
+  <ul *ngIf="data && data.length > 0" class="item-list">
+    <li *ngFor="let item of data" class="item">
+      <span class="item-info">{{ item.title }} - {{ item.status }}</span>
+      <div class="button-group">
+        <button class="edit-button" (click)="editData(item)">Edit</button>
+        <button class="delete-button" (click)="deleteItem(item.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+
+
 </section>
