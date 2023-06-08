@@ -15,11 +15,15 @@ To learn Angular, you can follow these steps:
 9. [Directives](https://github.com/alalUDDIN123/angular_practice/tree/directives)
 10. [Custom Directives](https://github.com/alalUDDIN123/angular_practice/tree/custom_directive)
 11. [Pipes](https://github.com/alalUDDIN123/angular_practice/tree/pipes)
-12. [Github Explorer](https://github.com/alalUDDIN123/angular_practice/tree/github_explorer)
-13. [Input and output decorator](https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator)
+12. [Input and Output Decorator](https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator)
+13. [Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/data_binding)
 14. [Routing](https://github.com/alalUDDIN123/angular_practice/tree/routing)
-15. [Simple counter](https://github.com/alalUDDIN123/angular_practice/tree/simple_counter)
-16. [Crud Operation](https://github.com/alalUDDIN123/angular_practice/tree/crud_operation_without_state_management)
+15. [Crud Operation Without NgRx](https://github.com/alalUDDIN123/angular_practice/tree/crud_operation_without_state_management)
+16. [NgRx](https://github.com/alalUDDIN123/angular_practice/tree/state_NgRx)
+17. [Counter with NgRx](https://github.com/alalUDDIN123/angular_practice/tree/state_managements_ngrx)
+18. [Github Explorer](https://github.com/alalUDDIN123/angular_practice/tree/github_explorer)
+19. [Simple Counter](https://github.com/alalUDDIN123/angular_practice/tree/simple_counter)
+
 
 ---
 ---
