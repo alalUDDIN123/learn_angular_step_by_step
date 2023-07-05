@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { todoReducer } from './todo/reducers/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({}, {})
+    // StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ todos: todoReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

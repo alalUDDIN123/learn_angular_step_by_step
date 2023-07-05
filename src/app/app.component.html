@@ -1,22 +1,30 @@
 <h1>{{ title }}</h1>
 
-<section class="main_cntainer" >
-  <ol>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup" target="_blank">Installation and Setup</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/common_command" target="_blank">Basic Angular Command or CLI</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/components"  target="_blank">Components</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding" target="_blank">Template and Data Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/even_binding" target="_blank">Event Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding" target="_blank">Play with Data Binding</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/module" target="_blank">Modules</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/form_handling" target="_blank">Form Handling</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/directives" target="_blank">Directives</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/custom_directive" target="_blank">Custom Directives</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/pipes" target="_blank">Pipes</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/github_explorer" target="_blank">Github Explorer</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator" target="_blank">Input and Output decorator</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/routing" target="_blank">Routing</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/simple_counter" target="_blank">Simple counter</a></li>
-    <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/crud_operation_without_state_management" target="_blank">Crud Operation</a></li>
-  </ol>
+<section class="main_cntainer">
+    <h1>Todo List</h1>
+    <ul>
+        <li *ngFor="let todo of todos$ | async">
+            {{ todo.title }}
+            <button (click)="updateTodoForm(todo)">Update</button>
+            <button (click)="deleteTodoById(todo.id)">Delete</button>
+        </li>
+    </ul>
+
+    <h2>Add Todo</h2>
+    <form (submit)="addTodo()">
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="newTodoTitle" name="newTodoTitle" required>
+        <label>Description:</label>
+        <input type="text" [(ngModel)]="newTodoDescription" name="newTodoDescription" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Update Todo</h2>
+    <form *ngIf="selectedTodo" (submit)="updateTodo()">
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="selectedTodo.title" name="selectedTodoTitle" required>
+        <label>Description:</label>
+        <input type="text" [(ngModel)]="selectedTodo.description" name="selectedTodoDescription" required>
+        <button type="submit">Update</button>
+    </form>
 </section>

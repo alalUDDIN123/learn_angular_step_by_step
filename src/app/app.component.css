@@ -5,36 +5,80 @@ h1 {
     margin-bottom: 20px;
 }
 
-
 .main_cntainer {
     width: 80%;
     margin: 0 auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
 
-ol {
-    list-style-type: decimal;
-    padding-left: 20px;
-    margin-bottom: 20px;
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
-    line-height: 1.5;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
-a {
-    text-decoration: none;
-    color: #337ab7;
+li button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-a:hover {
-    text-decoration: underline;
+li button:hover {
+    background-color: #c82333;
+}
+
+li button:first-child {
+    margin-right: 8px;
+}
+
+li span {
+    flex-grow: 1;
+    margin-right: 8px;
 }
