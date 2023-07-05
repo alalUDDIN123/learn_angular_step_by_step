@@ -19,18 +19,22 @@ export class AppComponent implements OnInit {
   newTodoDescription = '';
   selectedTodo: Todo | null = null; // Updated the type to allow null
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.todos$ = this.store.select(selectTodos);
   }
 
   addTodo() {
+    if (this.newTodoTitle.trim() === '' || this.newTodoDescription.trim() === '') {
+      alert('Please enter both title and description');
+      return;
+    }
+
     const newTodo: Todo = {
       id: this.generateUniqueId(),
       title: this.newTodoTitle,
       description: this.newTodoDescription,
-      completed: false
     };
 
     this.store.dispatch(createTodo({ todo: newTodo }));
@@ -49,7 +53,7 @@ export class AppComponent implements OnInit {
       this.selectedTodo = null;
     }
   }
-  
+
 
   deleteTodoById(todoId: string) {
     this.store.dispatch(deleteTodo({ todoId }));

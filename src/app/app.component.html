@@ -4,7 +4,7 @@
     <h1>Todo List</h1>
     <ul>
         <li *ngFor="let todo of todos$ | async">
-            {{ todo.title }}
+            {{ todo.title }} ::: {{ todo.description}}
             <button (click)="updateTodoForm(todo)">Update</button>
             <button (click)="deleteTodoById(todo.id)">Delete</button>
         </li>
@@ -19,7 +19,7 @@
         <button type="submit">Add</button>
     </form>
 
-    <h2>Update Todo</h2>
+    <h2 *ngIf="selectedTodo">Update Todo</h2>
     <form *ngIf="selectedTodo" (submit)="updateTodo()">
         <label>Title:</label>
         <input type="text" [(ngModel)]="selectedTodo.title" name="selectedTodoTitle" required>
