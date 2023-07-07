@@ -62,4 +62,4 @@ When the user interacts with the application's UI, the corresponding actions are
 
 
 ---
-`git push origin state_NgRx`
+`git push origin advanced_state_management_with_NgRx`
