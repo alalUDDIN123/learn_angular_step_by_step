@@ -15,7 +15,9 @@ import { todoReducer } from './todo/reducers/todo.reducer';
     HttpClientModule,
     FormsModule,
     // StoreModule.forRoot({}, {})
-    StoreModule.forRoot({ todos: todoReducer }),
+    StoreModule.forRoot({ allTodos: todoReducer }),
+    //  Registers the 'allTodos' feature key with the todoReducer in the Redux store
+
   ],
   providers: [],
   bootstrap: [AppComponent]
