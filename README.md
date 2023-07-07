@@ -18,10 +18,10 @@ To learn Angular, you can follow these steps:
 12. [Input and Output Decorator](https://github.com/alalUDDIN123/angular_practice/tree/input_output_decorator)
 13. [More Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/more_data_binding)
 14. [Routing](https://github.com/alalUDDIN123/angular_practice/tree/routing)
-15. [Crud Operation Without NgRx](https://github.com/alalUDDIN123/angular_practice/tree/crud_operation_without_state_management)
+15. [Crud operations without state management](https://github.com/alalUDDIN123/angular_practice/tree/crud_operation_without_state_management)
 16. [NgRx](https://github.com/alalUDDIN123/angular_practice/tree/state_NgRx) (**`CRUD APPLICATION WITH NgRx`**)
 17. [Simple Counter](https://github.com/alalUDDIN123/angular_practice/tree/simple_counter) (**`Counter app without NgRx`**)
-18. [Counter with NgRx](https://github.com/alalUDDIN123/angular_practice/tree/state_managments_ngrx) (**`Counter app with NgRx`**)
+18. [Counter with NgRx](https://github.com/alalUDDIN123/angular_practice/tree/state_management_with_NgRx) (**`Counter app with NgRx`**)
 19. [Github Explorer](https://github.com/alalUDDIN123/angular_practice/tree/github_explorer) (**`Mini project`**)
 20. [Testing Angular Application](https://github.com/alalUDDIN123/angular_practice/tree/testing_angular_application) 
 
