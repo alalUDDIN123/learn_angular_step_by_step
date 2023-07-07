@@ -175,4 +175,4 @@ This demonstrates two-way data binding as changes in the template (input field) 
 
 ---
 ---
-`git push origin data_binding`
+`git push origin more_data_binding`
