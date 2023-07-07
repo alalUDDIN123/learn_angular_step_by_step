@@ -13,4 +13,4 @@
 
 ---
 ---
-`git push origin even_binding`
+`git push origin event_binding`
