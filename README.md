@@ -8,7 +8,7 @@ To learn Angular, you can follow these steps:
 2. [Basic Angular Command or CLI](https://github.com/alalUDDIN123/angular_practice/tree/common_command)
 3. [Components](https://github.com/alalUDDIN123/angular_practice/tree/components)
 4. [Template and Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/template_and_data_binding)
-5. [Event Binding](https://github.com/alalUDDIN123/angular_practice/tree/even_binding)
+5. [Event Binding](https://github.com/alalUDDIN123/angular_practice/tree/event_binding)
 6. [Play with Data Binding](https://github.com/alalUDDIN123/angular_practice/tree/play_with_data_binding)
 7. [Modules](https://github.com/alalUDDIN123/angular_practice/tree/module)
 8. [Form Handling](https://github.com/alalUDDIN123/angular_practice/tree/form_handling)
