@@ -1,0 +1,100 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name:*</label>
+    <input type="text" id="name" formControlName="name" />
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['name'].errors?.['required']"
+    >
+      Please enter your name!
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:*</label>
+    <input type="email" id="email" formControlName="email" />
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['email'].errors?.['required']"
+      >Email is required!</span
+    >
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['email'].errors?.['email']"
+      >Please enter valid email!</span
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone:*</label>
+    <input type="text" id="phone" formControlName="phone" />
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['phone'].errors?.['required']"
+      >Please enter phone number!</span
+    >
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['phone'].errors?.['minlength']"
+    >
+      Please enter at least 10 digits!
+    </span>
+
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['phone'].errors?.['maxlength']"
+    >
+      Phone number cannot exceed 12 digits!
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label>Gender:*</label>
+    <div class="gender-group">
+      <label
+        ><input type="radio" formControlName="gender" value="male" />
+        Male</label
+      >
+      <label
+        ><input type="radio" formControlName="gender" value="female" />
+        Female</label
+      >
+      <label
+        ><input type="radio" formControlName="gender" value="others" />
+        Others</label
+      >
+    </div>
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['gender'].errors?.['required']"
+      >Please choose any one!</span
+    >
+  </div>
+
+  <div class="form-group checkbox-label">
+    <input type="checkbox" formControlName="termsAndConditions" />
+    I agree to the terms and conditions
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['termsAndConditions'].errors?.['required']"
+      >Please agree terms and condition!</span
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="state">State: *</label>
+    <select id="state" formControlName="state">
+      <option value="" disabled>Select a state</option>
+      <option value="assam">Assam</option>
+      <option value="nagaland">Nagaland</option>
+    </select>
+    <span
+      class="error-message"
+      *ngIf="submitted && formControls['state'].errors?.['required']"
+      >Please choose state!</span
+    >
+  </div>
+
+
+  <button type="submit">Submit</button>
+</form>

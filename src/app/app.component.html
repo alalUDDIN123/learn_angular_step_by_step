@@ -1,7 +1,7 @@
 <h1>{{ title }}</h1>
 
 <section class="main_cntainer">
-  <ol>
+  <ol *ngIf="!showForm && !  showFormTr">
     <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/installation_and_setup" target="_blank">1.
         Installation and Setup</a></li>
     <li><a href="https://github.com/alalUDDIN123/angular_practice/tree/common_command" target="_blank">2. Basic Angular
@@ -41,4 +41,11 @@
         Testing Angular Application</a></li>
 
   </ol>
+  <div class="show-form-reactive" *ngIf="showForm && !showFormTr">
+    <app-user-form />
+  </div>
+
+  <div class="show-form-template" *ngIf="showFormTr">
+    <app-user-form />
+  </div>
 </section>

@@ -1,0 +1,38 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name:*</label>
+    <input type="text" id="name" name="name" [(ngModel)]="userForm.value.name" required />
+    <span class="error-message" *ngIf="submitted && userForm.controls['name'].errors?.['required']">
+      Please enter your name!
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:*</label>
+    <input type="email" id="email" name="email" [(ngModel)]="userForm.value.email" required email />
+    <span class="error-message" *ngIf="submitted && userForm.controls['email'].errors?.['required']">
+      Email is required!
+    </span>
+    <span class="error-message" *ngIf="submitted && userForm.controls['email'].errors?.['email']">
+      Please enter a valid email!
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone:*</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="userForm.value.phone" required minlength="10" maxlength="12" />
+    <span class="error-message" *ngIf="submitted && userForm.controls['phone'].errors?.['required']">
+      Please enter a phone number!
+    </span>
+    <span class="error-message" *ngIf="submitted && userForm.controls['phone'].errors?.['minlength']">
+      Please enter at least 10 digits!
+    </span>
+    <span class="error-message" *ngIf="submitted && userForm.controls['phone'].errors?.['maxlength']">
+      Phone number cannot exceed 12 digits!
+    </span>
+  </div>
+
+  <!-- Other form fields... -->
+
+  <button type="submit">Submit</button>
+</form>

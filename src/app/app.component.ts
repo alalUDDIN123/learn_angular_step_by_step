@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = "Angular Ste by step";
- 
+  showForm:boolean=true
+  showFormTr:boolean=true
+
 }
